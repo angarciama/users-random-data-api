@@ -9,12 +9,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, onMounted } from 'vue'
-import { getUsers } from "~/api/controllers/users.controller.ts"
+import { getUsers } from '~/api/controllers/users.controller'
+import GeneralUserModel from '~/api/models/GeneralUserModel'
+
 export default {
   setup() {
-    const users = ref([])
+    const users = ref<GeneralUserModel[]>([]);
 
     onMounted(async () => {
       try {
@@ -25,7 +27,7 @@ export default {
       }
     })
 
-    const redirectToUser = (userId) => {
+    const redirectToUser = (userId: string) => {
       window.location.href = `/user/${userId}`
     }
     return { users, redirectToUser }
