@@ -1,5 +1,11 @@
 <template>
-    <div>
-        <h1>USERS</h1>
-    </div>
+  <GeneralUserCard></GeneralUserCard>
 </template>
+
+<script>
+import GeneralUserCard from "~/component/UsersCard/GeneralUserCard.vue";
+
+export default {
+  components: {GeneralUserCard},
+}
+</script>
