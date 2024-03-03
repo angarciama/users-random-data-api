@@ -1,75 +1,26 @@
-# Nuxt 3 Minimal Starter
+# USERS RANDOM DATA API
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+App desarrollada en el framework Nuxt 3. Tiene el objetivo de mostrar un listado de usuarios
+y averiguar datos sobre el usuario que se elija.
+Hace consumo de Random Data API https://random-data-api.com/documentation
 
-## Setup
+## Pre-requisitos
 
-Make sure to install the dependencies:
+* Node v18.16.1
+* NPM 9.5.1
 
-```bash
-# npm
-npm install
+## Instalación
+Instalar las dependencias del archivo package.json
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```Bash
+$ npm install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+### Despliegue en Local
+```Bash
+$ npm run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Abrir aplicación
+Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
+http://localhost:3000/users/
