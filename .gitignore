@@ -11,7 +11,7 @@ lib-cov
 *.sw?
 
 # Local env files
-.env.example
+.env
 
 # Logs
 /logs
