@@ -14,11 +14,16 @@ Instalar las dependencias del archivo package.json
 
 ```Bash
 $ npm install
+$ npm run dev -- --host 0.0.0.0
 ```
 
-### Despliegue en Local
+### Despliegue Local
 ```Bash
 $ npm run dev
+```
+### Despliegue red local
+```Bash
+$ npm run dev -- --host 0.0.0.0
 ```
 
 ### Abrir aplicación
