@@ -9,29 +9,31 @@
   </div>
 </template>
 
-<script lang="ts">
-import { ref, onMounted } from 'vue'
-import { getUsers } from '~/api/controllers/users.controller'
+<script setup lang="ts">
+import {onMounted, ref} from 'vue'
+import {getUsers} from '~/api/controllers/users.controller'
 import GeneralUserModel from '~/api/models/GeneralUserModel'
+import {userStore} from '~/store/users'
+import {navigateTo} from "#app/composables/router";
 
-export default {
-  setup() {
-    const users = ref<GeneralUserModel[]>([]);
+const users = ref<GeneralUserModel[]>([])
+const generalUserModel = ref<GeneralUserModel[]>([])
 
-    onMounted(async () => {
-      try {
-        const fetchedUsers = await getUsers()
-        users.value = fetchedUsers
-      } catch (error) {
-        console.error('Error fetching users:', error)
-      }
-    })
+onMounted(async () => {
+  try {
+    users.value = await getUsers()
+    userStore().setGeneralUserModel(users.value)
+    console.log('users', users.value)
 
-    const redirectToUser = (userId: string) => {
-      window.location.href = `/user/${userId}`
-    }
-    return { users, redirectToUser }
+    generalUserModel.value = userStore().generalUserModel
+    console.log('generalUserModel', generalUserModel.value)
+  } catch (error) {
+    console.error('Error fetching users:', error)
   }
+})
+
+const redirectToUser = async (userId: string) => {
+  await navigateTo(`/user/${userId}`)
 }
 </script>
 
