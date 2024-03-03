@@ -12,11 +12,13 @@ import {getUsers} from "~/api/controllers/users.controller";
 import {userStore} from "~/store/users";
 
 const users = ref<GeneralUserModel[]>([])
-
 onMounted(async () => {
   try {
-    users.value = await getUsers()
-    userStore().setGeneralUserModel(users.value)
+    users.value = userStore().generalUserModel
+    if (users.value.length == 0) {
+      users.value = await getUsers()
+      userStore().setGeneralUserModel(users.value)
+    }
   } catch (error) {
     console.error('Error fetching users:', error)
   }
