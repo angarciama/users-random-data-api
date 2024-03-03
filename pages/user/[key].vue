@@ -1,11 +1,12 @@
 <template>
-  <h1>User</h1>
+  <UserInformationCard :user="user"/>
 </template>
 
 <script setup lang="ts">
 import {  onMounted } from 'vue'
 import type GeneralUserModel from '~/api/models/GeneralUserModel'
 import { userStore } from '~/store/users'
+import UserInformationCard from "~/component/UsersCard/UserInformationCard.vue";
 
 const route = useRoute()
 const generalUserModel = ref<GeneralUserModel[]>([])
@@ -18,7 +19,6 @@ onMounted(async () => {
     const userId = route.params.key
     if (userId) {
       user.value = generalUserModel.value.find(user => user.uid === userId) ?? undefined
-      console.log('User:', user.value)
     }
   } catch (error) {
     console.error('Error fetching users:', error)
