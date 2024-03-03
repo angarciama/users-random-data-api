@@ -1,5 +1,5 @@
 <template>
-  <h1>USUARIO</h1>
+  <h1>User</h1>
 </template>
 
 <script setup lang="ts">
@@ -9,11 +9,17 @@ import { userStore } from '~/store/users'
 
 const route = useRoute()
 const generalUserModel = ref<GeneralUserModel[]>([])
+const user = ref<GeneralUserModel>()
+
 onMounted(async () => {
   try {
     generalUserModel.value = userStore().generalUserModel
-    console.log('generalUserModel', generalUserModel.value)
-    console.log('key', route.params.key)
+
+    const userId = route.params.key
+    if (userId) {
+      user.value = generalUserModel.value.find(user => user.uid === userId) ?? undefined
+      console.log('User:', user.value)
+    }
   } catch (error) {
     console.error('Error fetching users:', error)
   }
