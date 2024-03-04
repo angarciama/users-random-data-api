@@ -12,7 +12,6 @@ lib-cov
 
 # Local env files
 .env
-.env.*
 
 # Logs
 /logs
