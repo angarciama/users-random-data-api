@@ -16,6 +16,12 @@ Instalar las dependencias del archivo package.json
 $ npm install
 ```
 
+## Variables de entorno
+API_BACK_URL: no es necesaria debido a que esta definida por default 
+pero si se quiere modificar el tamaño de la respuesta editar size
+
+API_BACK_URL='https://random-data-api.com/api/v2/users?size=20&response_type=json'
+
 ### Despliegue Local
 ```Bash
 $ npm run dev
