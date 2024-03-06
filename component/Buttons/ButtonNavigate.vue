@@ -1,16 +1,31 @@
 <template>
-  <button @click="goBack">Volver</button>
+  <button @click="navigate">{{ buttonText }}</button>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import { defineProps } from 'vue'
+
+const props = defineProps({
+  route: {
+    type: String,
+    required: true
+  },
+  buttonText: {
+    type: String,
+    default: 'Volver'
+  }
+})
 
 const router = useRouter()
 
-const goBack = () => {
-  router.go(-1) // Vuelve a la página anterior en el historial
+const navigate = () => {
+  if (props.route === 'back') {
+    router.go(-1)
+  } else {
+    router.push(`/${props.route}`)
+  }
 }
-
 </script>
 
 <style scoped>
