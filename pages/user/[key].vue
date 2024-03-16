@@ -1,6 +1,10 @@
 <template>
-  <UserInformationCard :user="user"/>
-  <ButtonNavigate route="back" buttonText="Volver"/>
+  <Layout>
+    <template #mainSlot>
+      <UserInformationCard :user="user"/>
+      <ButtonNavigate route="back" buttonText="Volver"/>
+    </template>
+  </Layout>
 </template>
 
 <script setup lang="ts">
@@ -9,6 +13,7 @@ import type GeneralUserModel from '~/api/models/GeneralUserModel'
 import { userStore } from '~/store/users'
 import UserInformationCard from "~/component/UsersCard/UserInformationCard.vue";
 import ButtonNavigate from "~/component/Buttons/ButtonNavigate.vue";
+import Layout from "~/component/Layout/Layout.vue";
 
 const route = useRoute()
 const generalUserModel = ref<GeneralUserModel[]>([])

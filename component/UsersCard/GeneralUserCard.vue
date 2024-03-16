@@ -1,29 +1,24 @@
 <template>
-  <Layout>
-    <template #mainSlot>
-      <div class="general-user-card-select-container">
-        <div>Usuarios a listar</div>
-        <select v-model="selectedCount" class="general-user-card-select">
-          <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
-        </select>
-      </div>
-      <div v-for="user in displayedUsers" :key="user.id" class="general-user-card-container" @click="redirectToUser(user.uid)">
-        <img :src="user.avatar" alt="Avatar" class="general-user-card-img">
-        <section class="general-user-card-section">
-          <div>{{ user.last_name }}, {{ user.first_name }}</div>
-          <div>{{ user.email }}</div>
-          <div>{{ user.username }}</div>
-        </section>
-      </div>
-    </template>
-  </Layout>
+  <div class="general-user-card-select-container">
+    <div>Usuarios a listar</div>
+    <select v-model="selectedCount" class="general-user-card-select">
+      <option v-for="option in options" :key="option" :value="option">{{ option }}</option>
+    </select>
+  </div>
+  <div v-for="user in displayedUsers" :key="user.id" class="general-user-card-container" @click="redirectToUser(user.uid)">
+    <img :src="user.avatar" alt="Avatar" class="general-user-card-img">
+    <section class="general-user-card-section">
+      <div>{{ user.last_name }}, {{ user.first_name }}</div>
+      <div>{{ user.email }}</div>
+      <div>{{ user.username }}</div>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import GeneralUserModel from '~/api/models/GeneralUserModel'
 import { navigateTo } from "#app/composables/router";
-import Layout from "~/component/Layout/Layout.vue";
 
 const props = defineProps({
   users: {
