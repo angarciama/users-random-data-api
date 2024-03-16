@@ -13,7 +13,6 @@
             <div>{{ user.date_of_birth }}</div>
           </section>
         </div>
-
         <section>
           <div>
             <button @click="activeTab = 'Empleo'">Empleo</button>
@@ -21,22 +20,22 @@
             <button @click="activeTab = 'Suscripción'">Suscripción</button>
           </div>
           <div v-if="activeTab === 'Empleo'">
-            <div>{{ user.employment.title }}</div>
-            <div>{{ user.employment.key_skill }}</div>
+            <div><strong>Qualification: </strong>{{ user.employment.title }}</div>
+            <div><strong>Skills: </strong>{{ user.employment.key_skill }}</div>
           </div>
           <div v-else-if="activeTab === 'Dirección'">
-            <div>{{ user.address.city }}</div>
-            <div>{{ user.address.street_name }}</div>
-            <div>{{ user.address.street_address }}</div>
-            <div>{{ user.address.zip_code }}</div>
-            <div>{{ user.address.state }}</div>
-            <div>{{ user.address.country }}</div>
+            <div><strong>City: </strong>{{ user.address.city }}</div>
+            <div><strong>Street: </strong>{{ user.address.street_name }}</div>
+            <div><strong>Address: </strong>{{ user.address.street_address }}</div>
+            <div><strong>Zip Code: </strong>{{ user.address.zip_code }}</div>
+            <div><strong>State: </strong>{{ user.address.state }}</div>
+            <div><strong>Country: </strong>{{ user.address.country }}</div>
           </div>
           <div v-else-if="activeTab === 'Suscripción'">
-            <div>{{ user.subscription.plan }}</div>
-            <div>{{ user.subscription.status }}</div>
-            <div>{{ user.subscription.payment_method }}</div>
-            <div>{{ user.subscription.term }}</div>
+            <div><strong>Plan: </strong>{{ user.subscription.plan }}</div>
+            <div><strong>State: </strong>{{ user.subscription.status }}</div>
+            <div><strong>Method of payment: </strong>{{ user.subscription.payment_method }}</div>
+            <div><strong>Deadline: </strong>{{ user.subscription.term }}</div>
           </div>
         </section>
       </div>
