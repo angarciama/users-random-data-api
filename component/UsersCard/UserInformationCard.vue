@@ -2,15 +2,18 @@
   <Layout>
     <template #mainSlot>
       <div v-if="user" class="general-user-card-container">
-        <img :src="user.avatar" alt="Avatar" class="general-user-card-img">
-        <section class="general-user-card-section">
-          <div>{{ user.last_name }}, {{ user.first_name }}</div>
-          <div>{{ user.username }}</div>
-          <div>{{ user.email }}</div>
-          <div>{{ user.gender }}</div>
-          <div>{{ user.phone_number }}</div>
-          <div>{{ user.date_of_birth }}</div>
-        </section>
+        <div class="general-user-card-info">
+          <img :src="user.avatar" alt="Avatar" class="general-user-card-img">
+          <section class="general-user-card-section">
+            <div>{{ user.last_name }}, {{ user.first_name }}</div>
+            <div>{{ user.username }}</div>
+            <div>{{ user.email }}</div>
+            <div>{{ user.gender }}</div>
+            <div>{{ user.phone_number }}</div>
+            <div>{{ user.date_of_birth }}</div>
+          </section>
+        </div>
+
         <section>
           <div>
             <button @click="activeTab = 'Empleo'">Empleo</button>
@@ -59,12 +62,19 @@ const activeTab = ref<string>('Empleo')
 <style>
 .general-user-card-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   border: solid 1px black;
   border-radius: 10px;
   margin: 10px 0;
   cursor: pointer;
+}
+.general-user-card-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
 }
 .general-user-card-img{
   height: 100px;
