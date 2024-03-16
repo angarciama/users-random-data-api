@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <template #mainSlot>
-      <div v-if="user" class="general-user-card-container">
+      <div v-if="user" class="user-information-card-container">
         <div class="general-user-card-info">
           <img :src="user.avatar" alt="Avatar" class="general-user-card-img">
           <section class="general-user-card-section">
@@ -59,7 +59,7 @@ const activeTab = ref<string>('Empleo')
 </script>
 
 <style>
-.general-user-card-container {
+.user-information-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
