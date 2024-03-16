@@ -19,11 +19,11 @@
             <button @click="activeTab = 'Dirección'">Dirección</button>
             <button @click="activeTab = 'Suscripción'">Suscripción</button>
           </div>
-          <div v-if="activeTab === 'Empleo'">
+          <div v-if="activeTab === 'Empleo'" class="user-information-card-info-tabs">
             <div><strong>Qualification: </strong>{{ user.employment.title }}</div>
             <div><strong>Skills: </strong>{{ user.employment.key_skill }}</div>
           </div>
-          <div v-else-if="activeTab === 'Dirección'">
+          <div v-else-if="activeTab === 'Dirección'" class="user-information-card-info-tabs">
             <div><strong>City: </strong>{{ user.address.city }}</div>
             <div><strong>Street: </strong>{{ user.address.street_name }}</div>
             <div><strong>Address: </strong>{{ user.address.street_address }}</div>
@@ -31,7 +31,7 @@
             <div><strong>State: </strong>{{ user.address.state }}</div>
             <div><strong>Country: </strong>{{ user.address.country }}</div>
           </div>
-          <div v-else-if="activeTab === 'Suscripción'">
+          <div v-else-if="activeTab === 'Suscripción'" class="user-information-card-info-tabs">
             <div><strong>Plan: </strong>{{ user.subscription.plan }}</div>
             <div><strong>State: </strong>{{ user.subscription.status }}</div>
             <div><strong>Method of payment: </strong>{{ user.subscription.payment_method }}</div>
@@ -58,15 +58,15 @@ defineProps({
 const activeTab = ref<string>('Empleo')
 </script>
 
-<style>
+<style scoped>
 .user-information-card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 350px;
   width: 100%;
   border: solid 1px black;
   border-radius: 10px;
-  margin: 10px 0;
   cursor: pointer;
 }
 .general-user-card-info {
@@ -84,5 +84,26 @@ const activeTab = ref<string>('Empleo')
 .general-user-card-section {
   display: flex;
   flex-direction: column;
+}
+button {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 20px;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:active {
+  background-color: black;
+  color: white;
+}
+.user-information-card-info-tabs {
+  padding: 10px;
 }
 </style>
