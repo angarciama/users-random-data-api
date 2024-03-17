@@ -1,4 +1,4 @@
-FROM --platform=linux/x86-64 node:18.16.1-alpine3.15 AS build
+FROM --platform=linux/x86-64 node:18.16.1-alpine AS build
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-FROM --platform=linux/x86-64 node:18.16.1-alpine3.15 AS production
+FROM --platform=linux/x86-64 node:18.16.1-alpine AS production
 
 WORKDIR /app
 
