@@ -7,7 +7,7 @@ Hace consumo de Random Data API https://random-data-api.com/documentation
 ## Pre-requisitos
 
 * Node v18.16.1
-* NPM 9.5.1
+* NPM v9.5.1
 
 ## Instalación
 Instalar las dependencias del archivo package.json
