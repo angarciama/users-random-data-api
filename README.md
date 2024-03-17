@@ -22,13 +22,27 @@ pero si se quiere modificar el tamaño de la respuesta editar size
 
 API_BACK_URL='https://random-data-api.com/api/v2/users?size=20&response_type=json'
 
-### Despliegue Local
+## Despliegue
+
+### Local
 ```Bash
 $ npm run dev
 ```
-### Despliegue red local
+### Red local
 ```Bash
 $ npm run dev -- --host 0.0.0.0
+```
+
+### Abrir aplicación
+Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
+http://localhost:3000/users/
+
+### Docker
+```Bash
+$  docker build -t nombre-de-imagen .
+```
+```Bash
+$  docker run -p 3000:3000 nombre-de-imagen
 ```
 
 ### Abrir aplicación
