@@ -35,7 +35,7 @@ $ npm run dev -- --host 0.0.0.0
 
 ### Abrir aplicación
 Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
-http://localhost:3000/users/
+http://localhost:3000/
 
 ### Docker
 ```Bash
@@ -47,4 +47,4 @@ $  docker run -p 3000:3000 nombre-de-imagen
 
 ### Abrir aplicación
 Ir al siguiente enlace reemplazando localhost y el puerto según el caso, ej:
-http://localhost:3000/users/
+http://localhost:3000/
