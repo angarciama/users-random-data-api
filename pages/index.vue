@@ -2,7 +2,7 @@
   <Layout>
     <template #mainSlot>
       <ButtonNavigate route="users" buttonText="Usuarios"/>
-      <ButtonNavigate route="back" buttonText="Volver"/>
+      <ButtonNavigate route="back" buttonText="Salir"/>
     </template>
   </Layout>
 </template>
