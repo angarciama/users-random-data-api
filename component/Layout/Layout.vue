@@ -1,13 +1,15 @@
 <template>
   <div :class="props.propClassLayout">
     <header>
-
+      <div>Modulo administrativo</div>
     </header>
     <main>
       <slot name="mainSlot"></slot>
     </main>
     <footer>
-
+      <div>Hace consumo de Random Data API
+        <a href="https://random-data-api.com/documentation" target="_blank">https://random-data-api.com/documentation</a>
+      </div>
     </footer>
   </div>
 </template>
