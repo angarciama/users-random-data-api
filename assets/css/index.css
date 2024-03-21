@@ -2,29 +2,36 @@
 @import url('./generic/box-sizing.css');
 @import url('./generic/normalize.css');
 @import url('./generic/scroll.css');
-
 /* Settings */
 @import url('./settings/colors.css');
 @import url('./settings/fonts.css');
 
-html {
-    font-size: 16px;
+:root {
+    --primary-color: #000000;
+}
+*{
+    font-family: "Roboto Light";
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-size-adjust: none;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
 }
-
 ::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 50px;
+    margin: 12px 0;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 50px;
-}
-
-p {
-    margin: 0;
 }
