@@ -1,8 +1,10 @@
 <template>
   <Layout>
     <template #mainSlot>
-      <GeneralUserCard :users="users"/>
-      <ButtonNavigate route="back" buttonText="Volver"/>
+      <div>
+        <GeneralUserCard :users="users"/>
+        <ButtonNavigate route="back" buttonText="Volver"/>
+      </div>
     </template>
   </Layout>
 </template>
